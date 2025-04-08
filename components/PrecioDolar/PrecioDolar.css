@@ -1,0 +1,20 @@
+.dolar-container{
+
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-dolar{
+    position: relative;
+    height: 500px;
+    width: 100%;
+}
+
+h2{
+    text-align: center;
+}

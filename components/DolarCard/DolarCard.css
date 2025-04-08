@@ -1,0 +1,41 @@
+.dolar-card{
+    width: 400px;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+.dolar-card>h3::before{
+    content:"Dolar (U$D) "
+}
+
+.info-dolarCard>p::after{
+    content: "$";
+}
+
+.dolar-card:hover{
+    box-shadow: 5px 5px;
+    transition: box-shadow 0.5s;
+}
+.dolar-card>h3{
+    margin: 5px;
+}
+
+.img-dolarCard{
+    float: left;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+}
+
+.info-dolarCard>p{
+    padding: 0px;
+    margin: auto;
+}
+.info-dolarCard{
+    display: inline-block;
+    height: 60px;
+    width: 50%;
+    line-height: 30px;
+    padding-left: 25px;
+}
