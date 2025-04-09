@@ -1,0 +1,10 @@
+.cripto-container{
+    
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+}

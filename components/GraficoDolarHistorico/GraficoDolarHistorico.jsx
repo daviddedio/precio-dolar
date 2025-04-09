@@ -67,7 +67,7 @@ export const GraficoDolarHistorico = () => {
             <div className="form-dolarHistorico">
                 <label htmlFor="years"><b>Seleccionar un año especifico: </b></label>
                 <select id="years" onChange={cambioYear}>
-                    {rangeYear.map(e=><option value={e}>Año - {e}</option>)}
+                    {rangeYear.map((e, i)=><option key={i} value={e}>Año - {e}</option>)}
                 </select>
             </div>
             {

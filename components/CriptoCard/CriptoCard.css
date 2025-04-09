@@ -1,0 +1,80 @@
+.cripto-card {
+    width: 400px;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+.cripto-card:hover {
+    box-shadow: 5px 5px;
+    transition: box-shadow 0.5s;
+}
+
+.cripto-card>h3 {
+    margin: 0px;
+}
+
+.cripto-card>h3>b {
+    border-radius: 50%;
+    background: black;
+    color: white;
+    text-shadow: -1px -1px 0 #000,  /* Sombra superior izquierda */
+    1px -1px 0 #000,  /* Sombra superior derecha */
+   -1px  1px 0 #000,  /* Sombra inferior izquierda */
+    1px  1px 0 #000;   /* Sombra inferior derecha */
+    font-size: 25px;
+}
+
+.cripto-card>h3>i {
+    font-size: 16px;
+}
+
+.cripto-card>h3>span {
+    display: inline;
+    float: right;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.info-criptoCard>p {
+    margin: 0px 0px 1px 0px;
+    text-align: center;
+}
+
+.info-criptoCard>p::after {
+    content: 'U$D';
+    margin-left: 5px;
+    color: green;
+    background: greenyellow;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+.est-critoCard{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.est-critoCard>div{
+    width: 30%;
+    margin: auto;
+    text-align: center;
+}
+
+.est-critoCard>div>h5, p{
+    margin: 0px;
+}
+
+.est-critoCard>div>div{
+    height: 50px;
+}
+
+.c-green{
+    color: green;
+}
+
+.c-red{
+    color: red;
+}
