@@ -1,46 +1,24 @@
-import { useState, useEffect } from "react"
-import { consultaPrecioMonedas, consultaPrecios } from "../../fetch/fetchData"
-import { DolarCard } from "../DolarCard/DolarCard"
-import { GraficoDolarHistorico } from "../GraficoDolarHistorico/GraficoDolarHistorico"
+import { useState } from 'react'
+import { Buscador } from '../Buscador/Buscador'
+import { GraficConteiner } from '../GraficConteiner/GraficConteiner'
+import { DolarConteiner } from '../DolarConteiner/DolarConteiner';
+import { consultaRango, consultaPrecios, consultaPrecioMonedas } from "../../fetch/fetchData";
 import './PrecioDolar.css'
 
 export const PrecioDolar = () => {
-
-    const [data, setData] = useState([])
-    const [dataBis, setDataBis] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState('')
-
-    const fetchingData = async () => {
-        setLoading(true)
-        try {
-            const datos = await consultaPrecios()
-            const datos2 = await consultaPrecioMonedas()
-            setData(datos)
-            setDataBis(datos2)
-        } catch (error) {
-            setError(error.message)
-        } finally {
-            setLoading(false)
-        }
-    }
-
-    useEffect(() => { fetchingData() }, [])
+    const [year, setYear] = useState(new Date().getFullYear())
+    
     return (
-        <>
-            <div className="chart-dolar">
-                <GraficoDolarHistorico />
-            </div>
+        <div className='principal-conteiner-riesgo'>
+            <h2>Precio del dolar en Argentina</h2>
+            <Buscador busca={year} setBusca={setYear} />
+            <GraficConteiner curso={year} consulta={consultaRango(year)}/>
             <hr />
             <h2>Precio de los distintos dolares en Argentina</h2>
-            <div className="dolar-container">
-                {loading ? <p>cargando..</p> : data.map((d, i) => <DolarCard key={i} compra={d.compra} venta={d.venta} casa={d.casa} nombre={d.nombre} />)}
-            </div>
+            <DolarConteiner consulta={consultaPrecios}/>
             <hr />
-            <h2>Precio de las distintas monedas de la region</h2>
-            <div className="dolar-container">
-                {loading ? <p>cargando..</p> : dataBis.map((d, i) => <DolarCard key={i} compra={d.compra} venta={d.venta} casa={d.casa} nombre={d.nombre} />)}
-            </div>
-        </>
+            <h2>Precio de las distintas monedas de la zona</h2>
+            <DolarConteiner consulta={consultaPrecioMonedas}/>
+        </div>
     )
 }

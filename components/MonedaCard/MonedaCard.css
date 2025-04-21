@@ -1,0 +1,42 @@
+.Moneda-card{
+    width: 400px;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+/*.Moneda-card>h3::before{
+    content:"Moneda (U$D) "
+}*/
+
+.info-MonedaCard>p::after{
+    content: "$";
+}
+
+.Moneda-card:hover{
+    box-shadow: 5px 5px;
+    transition: box-shadow 0.5s;
+}
+.Moneda-card>h3{
+    margin: 5px;
+}
+
+.img-MonedaCard{
+    float: left;
+
+    width: 60px;
+    height: 60px;
+}
+
+.info-MonedaCard>p{
+    padding: 0px;
+    margin: auto;
+}
+.info-MonedaCard{
+    display: inline-block;
+    height: 60px;
+    width: 50%;
+    line-height: 30px;
+    padding-left: 25px;
+}

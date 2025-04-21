@@ -1,17 +1,10 @@
-import { useEffect, useState } from "react"
-import { PrecioDolar } from "../components/PrecioDolar/PrecioDolar"
-import { PrecioCripto } from "../components/PrecioCripto/PrecioCripto"
-
+import { AppRutas } from "../AppRutas/AppRutas"
 import './App.css'
 
 export const App = () => {
-
-
-    return( 
-        <>
-          <PrecioDolar/>
-          <hr />
-          <PrecioCripto/>
-        </>
-    )
+  return (
+    <>
+      <AppRutas></AppRutas>
+    </>
+  )
 }

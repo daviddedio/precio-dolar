@@ -1,0 +1,17 @@
+.nav-options{
+    list-style: none;
+    display: flex;
+    width: 100%;
+}
+
+.nav-options>li{
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+    width: 150px;
+    text-align: center;
+}
+
+.nav-options>li>a:link{
+    color: black;
+}

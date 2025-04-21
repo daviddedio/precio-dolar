@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react"
 import './CriptoCard.css'
 
-export const CriptoCard = ({ symbol, name, nameid, price, rank, pChange1hr, pChange7d, pChange24h }) => {
+export const CriptoCard = ({ symbol, name, nameid, price, rank, pChange1hr, pChange7d, pChange24h, funcion }) => {
+    
+    const accion = ()=>{
+        funcion(symbol)
+    }
+
     return (
-        <div className="cripto-card">
+        <div className="cripto-card" onClick={()=>accion()}>
             <h3><b>{symbol}</b> {name} - <i>({nameid})</i> <span>(Rank: {rank})</span></h3>
             <hr />
             <div className='info-criptoCard'>

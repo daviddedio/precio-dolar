@@ -1,9 +1,4 @@
-.chart-riesgo{
-    width: 100%;
-    height: 500px;
-}
-
-.riesgo-container{
+.dolar-container-items{
     width: 100%;
     display: flex;
     gap: 5px;

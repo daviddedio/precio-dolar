@@ -1,0 +1,39 @@
+.stock-row {
+    width: 90%;
+    height: auto;
+    border: 1px solid black;
+    margin: 1px auto;
+}
+
+.stock-row {
+    animation: stock-row 1s 2;
+}
+
+@keyframes stock-row {
+
+    0% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 1;
+    }
+}
+
+p>span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.stock-header,
+.stock-body {
+    margin: 0px 10px;
+}
+
+.claro {
+    background: gainsboro;
+}
+
+.obscuro {
+    background: white;
+}

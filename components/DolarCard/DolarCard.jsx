@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './dolarCard.css'
 
 export const DolarCard = ({ compra, venta, casa, nombre }) => {

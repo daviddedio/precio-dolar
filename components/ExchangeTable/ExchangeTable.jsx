@@ -9,8 +9,7 @@ export const ExchangeTable = () => {
     const getData = async () => {
         setLoading(true)
         try {
-            const datos = await consultaExchange(25)
-            console.log(datos.length)
+            const datos = await consultaExchange(15)
             setData(datos)
         } catch (error) {
             setError(error.message)

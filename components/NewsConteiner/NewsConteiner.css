@@ -1,9 +1,4 @@
-.chart-riesgo{
-    width: 100%;
-    height: 500px;
-}
-
-.riesgo-container{
+.news-container-items{
     width: 100%;
     display: flex;
     gap: 5px;
@@ -11,4 +6,8 @@
 
     justify-content: center;
     align-items: center;
+}
+
+.titulo-news{
+    text-align: center;
 }

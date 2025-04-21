@@ -1,53 +1,32 @@
 import { useState, useEffect } from "react"
 import { CriptoCard } from "../CriptoCard/CriptoCard"
-import { consultaCripto } from "../../fetch/fetchData"
+import { consultaCripto, getCriptoHistory } from "../../fetch/fetchData"
 import { ExchangeTable } from "../ExchangeTable/ExchangeTable"
+import { CriptoConteiner } from "../CriptoConteiner/CriptoConteiner"
+import { CriptoConteinerGrafico } from "../CriptoConteinerGrafico/CriptoConteinerGrafico"
 import './PrecioCripto.css'
 
 export const PrecioCripto = () => {
-    const [data, setData] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState('')
-
-    const getData = async () => {
-        setLoading(true)
-        try {
-            const datos = await consultaCripto()
-            setData(datos)
-        } catch (error) {
-            setError(error.message)
-        } finally {
-            setLoading(false)
-        }
+    const [cripto, setCripto] = useState('BTC')
+    const [api, setApi] = useState('')
+    const setApiKey = (e) => {
+        setApi(e.target.value)
     }
-
-    useEffect(() => {
-        getData()
-    }, [])
 
     return (
         <>
             <h2>TOP 12 - Precio global de las distintas criptos en dolares</h2>
-            <div className="cripto-container">
-                {
-                    loading ? <p>Cargando...</p> :
-                        data.map((e, i) =>
-                            <CriptoCard
-                                key={i}
-                                name={e.name}
-                                nameid={e.nameid}
-                                symbol={e.symbol}
-                                price={e.price_usd}
-                                rank={e.rank}
-                                pChange1hr={e.percent_change_1h}
-                                pChange24h={e.percent_change_24h}
-                                pChange7d={e.percent_change_7d} />
-                        )
-                }
-            </div>
+            <CriptoConteiner consulta={consultaCripto} funcion={setCripto} />
             <hr />
-            <h2>Exchanges - plataforma de intercambio de cripto mas importantes</h2>
-                <ExchangeTable/>
+            <div className="form-api">
+                <label htmlFor="api">Ingrese su apiKey (pegar) en el cuadro siguiente y seleccione cualquier cripto en el listado superior</label>
+                <input type="text" name="api" id="api" onChange={setApiKey} />
+                <p>para conseguir su apiKey haga <a href="https://www.alphavantage.co/support/#api-key" target="_blank">click</a> aqui</p>
+                <p>NOTA: Solo tiene disponible 25 consultas diarias</p>
+            </div>
+            <CriptoConteinerGrafico cripto={cripto} consulta={getCriptoHistory} api={api} />
+            <h2>Exchanges (15) - plataforma de intercambio de cripto mas importantes</h2>
+            <ExchangeTable />
 
         </>
     )
