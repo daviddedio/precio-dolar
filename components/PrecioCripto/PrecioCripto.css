@@ -1,6 +1,7 @@
 .form-api>label{
     display: block;
     margin-bottom: 5px;
+    color: white;
 }
 
 .form-api>input{
@@ -12,4 +13,9 @@
 .form-api{
     text-align: center;
     margin: 15px;
+    color: white;
+}
+
+.data-conteiner>h2{
+    color: white;
 }

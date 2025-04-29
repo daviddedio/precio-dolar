@@ -1,0 +1,7 @@
+.data-conteiner{
+    background: black;
+}
+
+.data-conteiner>p, h2, h3, span, label{
+    color: white;
+}

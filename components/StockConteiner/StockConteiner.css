@@ -1,5 +1,10 @@
 .stock-conteiner>p{
     text-align: center;
+    color: white;
+}
+
+.stock-conteiner>h2{
+    color: white;
 }
 
 .stoc-contenedor-componente{

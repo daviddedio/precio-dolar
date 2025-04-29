@@ -3,10 +3,12 @@
     height: 450px;
     margin: 10px;
     border: 1px solid white;
+    background-color: white;
 }
 
 .paper:hover{
-    box-shadow: 5px 5px 5px 5px black;
+    /*box-shadow: 5px 5px 5px 5px black;*/
+    box-shadow: 0 0 2rem white
 }
 
 .header-paper{
@@ -58,4 +60,12 @@
 .body-bottom{
     position: absolute;
     bottom: 0px;
+}
+
+.body-paper>p{
+    color: black;
+}
+
+.body-bottom>p{
+    color: black;
 }

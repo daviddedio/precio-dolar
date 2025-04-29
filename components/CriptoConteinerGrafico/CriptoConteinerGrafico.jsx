@@ -1,47 +1,49 @@
 import { useState, useEffect } from "react"
 import { Grafico } from "../Grafico/Grafico"
+import { getCriptoHistory } from "../../fetch/fetchData"
 import './CriptoConteinerGrafico.css'
 
-export const CriptoConteinerGrafico = ({ cripto, consulta, api }) => {
+export const CriptoConteinerGrafico = ({ cripto, api }) => {
 
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState([])
     const [error, setError] = useState('')
 
-    const getData = async () => {
+    const getData = async()=>{
         setLoading(true)
         try {
-            const datos = await fetch(consulta(cripto, api))
+            const datos = await getCriptoHistory(cripto, api)
             setData(datos)
         } catch (error) {
             setError(error)
-            console.log(error)
-        } finally { setLoading(false) }
+        }finally{
+            setLoading(false)
+        }
+
     }
 
     useEffect(() => {
         getData()
-    }, [cripto, api])
+    }, [])
 
     const options = {
         chart: {
-            title: "Riesgo pais",
-            subtitle: "Argentina",
+            title: "Precio API",
+            subtitle: "Cripto",
         },
     }
 
     return (
         <div className="cripto-grafico-conteiner">
+            <h2>Cripto: {cripto} (U$D)</h2>
             {
-                loading ? 
-                    error ? <p>error de carga</p> 
-                    : 
-                        <p>cargando...</p>
-                        :
-                        <Grafico
-                            data={data}
-                            option={options}
-                        />
+                loading ?
+                    <p>cargando...</p>
+                    :
+                    <Grafico
+                        data={data}
+                        option={options}
+                    />
             }
         </div>
     )

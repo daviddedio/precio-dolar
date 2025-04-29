@@ -2,16 +2,40 @@
     list-style: none;
     display: flex;
     width: 100%;
+    background: black;
+    padding: 0px;
+    margin: 0px;
 }
 
 .nav-options>li{
-    border: 1px solid black;
-    margin: 5px;
+    border: 1px solid white;
     padding: 5px;
     width: 150px;
     text-align: center;
 }
 
 .nav-options>li>a:link{
-    color: black;
+    color: white;
+    text-decoration: none;
 }
+
+.nav-options>li>a{
+    color: white;
+}
+
+.nav-options>li:hover{
+    background: green;
+}
+
+.selected{
+    background-color: green;
+    border: 1px solid black;
+    animation: latido 2s ease-in-out 0.5s infinite;
+}
+
+@keyframes latido {
+    0%{background-color: green}
+    50%{background-color: rgb(1, 80, 1)}
+    100%{background-color: green;}
+}
+

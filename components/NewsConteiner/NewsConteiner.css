@@ -8,6 +8,14 @@
     align-items: center;
 }
 
+.data-conteiner{
+    padding: 25px;
+    height: 900px;
+    overflow-y: scroll;
+}
+
 .titulo-news{
+    margin-top: 10px;
     text-align: center;
+    color: white;
 }

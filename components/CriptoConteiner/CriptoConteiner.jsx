@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react"
 import { CriptoCard } from "../CriptoCard/CriptoCard"
+import { consultaCripto } from "../../fetch/fetchData"
 
 import './CriptoConteiner.css'
 
-export const CriptoConteiner = ({ consulta, funcion }) => {
+export const CriptoConteiner = ({ api }) => {
 
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
@@ -13,7 +14,7 @@ export const CriptoConteiner = ({ consulta, funcion }) => {
     const getData = async () => {
         setLoading(true)
         try {
-            const datos = await consulta()
+            const datos = await consultaCripto()
             setData(datos)
         } catch (error) {
             setError(error.message)
@@ -41,7 +42,7 @@ export const CriptoConteiner = ({ consulta, funcion }) => {
                             pChange1hr={e.percent_change_1h}
                             pChange24h={e.percent_change_24h}
                             pChange7d={e.percent_change_7d}
-                            funcion = {funcion}
+                            api={api}
                             />
                     )
             }

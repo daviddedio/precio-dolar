@@ -4,9 +4,8 @@ import { GraficConteiner } from '../GraficConteiner/GraficConteiner'
 import { consultaRiesgoPais } from '../../fetch/fetchData'
 import { StockConteiner } from '../StockConteiner/StockConteiner'
 import { InfoRiesgo } from '../InfoRiesgo/InfoRiesgo'
-
 import './RiesgoPais.css'
-
+import '../../public/index.css'
 //https://www.youtube.com/watch?v=MkZyjJS_Hto
 
 export const RiesgoPais = () => {
@@ -14,7 +13,7 @@ export const RiesgoPais = () => {
 
     return (
         <>
-            <div className='principal-conteiner-riesgo'>
+            <div className='principal-conteiner-riesgo data-conteiner'>
                 <h2>Riesgo pais en Argentina</h2>
                 <InfoRiesgo />
                 <Buscador busca={year} setBusca={setYear} />

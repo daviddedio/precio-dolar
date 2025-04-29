@@ -1,0 +1,4 @@
+.g-grafico-conteiner {
+display: grid;
+place-items: center;
+}

@@ -1,9 +1,10 @@
 import { RutaCripto } from "../rutas/RutaCripto"
 import { RutaPrecioDolar } from "../rutas/RutaPrecioDolar"
 import { RutaRiesgoPais } from "../rutas/RutaRiesgoPais"
-import {RutaNews} from "../rutas/RutaNews"
+import { RutaNews } from "../rutas/RutaNews"
 import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom"
 import { NavBar } from "../components/NavBar/NavBar"
+import { Provider } from '../Context/Context'
 
 export const AppRutas = () => {
 
@@ -11,7 +12,7 @@ export const AppRutas = () => {
     return (
         <>
             <BrowserRouter>
-            <NavBar></NavBar>
+                    <NavBar />
                 <Routes>
                     <Route path="/" element={<RutaNews></RutaNews>}></Route>
                     <Route path="/acciones" element={<RutaRiesgoPais></RutaRiesgoPais>}></Route>

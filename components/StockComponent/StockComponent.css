@@ -32,8 +32,23 @@ p>span {
 
 .claro {
     background: gainsboro;
+    color: black;
 }
 
-.obscuro {
-    background: white;
+.obscuro{
+    background: rgb(59, 59, 59);
+    color: white;
 }
+
+.claro>.stock-header>p>span{
+    color:black;
+}
+
+.claro>.stock-body>p>span{
+    color:black;
+}
+
+.obscuro>.stock-header>p>span{
+    color:white;
+}
+

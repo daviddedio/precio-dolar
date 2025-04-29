@@ -1,0 +1,13 @@
+.footer-conteiner{
+    width: 100%;
+    height: 400px;
+    background: black;
+    margin-top: 2px;
+    color: white;
+    overflow-y: scroll;
+}
+
+.apiLinks>h2{
+    color: white;
+}
+

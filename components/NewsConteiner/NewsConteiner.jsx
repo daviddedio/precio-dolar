@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { getNews } from "../../fetch/fetchData"
 import { NewsPaper } from "../NewsPaper/NewsPaper"
 import './NewsConteiner.css'
+import '../../public/index.css'
 
 export const NewsConteiner = () => {
 
@@ -24,7 +25,7 @@ export const NewsConteiner = () => {
     useEffect(() => { getData() }, [])
 
     return (
-        <>
+        <div className="data-conteiner">
             <h2 className="titulo-news">Noticias y articulos sobre el mercado financiero mundial</h2>
             <div className="news-container-items">
                 {
@@ -41,6 +42,6 @@ export const NewsConteiner = () => {
                         />)
                 }
             </div>
-        </>
+        </div>
     )
 }

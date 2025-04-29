@@ -38,7 +38,7 @@ export const StockConteiner = () => {
             <h2>Informacion importante para la interpretacion de la informacion de la tabla de acciones que cotizan en bolsa de Argentina</h2>
             <InfoStock/>
             <h2>Tabla de las acciones que cotizan en bolsa de Argentina</h2>
-            <p>Utilizar la tabla debajo para la busqueda de informacion. Consultar el siguiente <a href="https://www.investing.com/equities/argentina">Enlace</a> para datos financiero</p> 
+            <p>Utilizar la tabla debajo para la busqueda de informacion. Consultar el siguiente <a href="https://www.investing.com/equities/argentina" target="_blank">Enlace</a> para datos financiero</p> 
             <FormBusqueda filtrar={filtrarNombre}/>
             <div className="stoc-contenedor-componente">
             {

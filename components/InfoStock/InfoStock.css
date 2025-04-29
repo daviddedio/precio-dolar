@@ -5,3 +5,11 @@
 .info-stock>div{
     margin-bottom: 10px;
 }
+
+.Exchange>p, .miccode>p, .figi>p, .cfi>p{
+    color: white;
+}
+
+li{
+    color: white;
+}

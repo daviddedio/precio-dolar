@@ -1,45 +1,137 @@
+@keyframes pulso {
+    0% {
+        border-color: red;
+    }
+
+    25% {
+        border-color: rgba(0, 0, 0, 1);
+    }
+
+    50% {
+        border-color: red;
+    }
+
+    75% {
+        border-color: rgba(0, 0, 0, 1);
+    }
+
+    100% {
+        border-color: red;
+    }
+}
+
 .cripto-card {
-    width: 400px;
-    height: 125px;
-    border: 1px solid black;
+    width: 350px;
     margin: 10px;
     padding: 10px;
+    transition: box-shadow 0.5s;
+    border: 2px solid rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0.2);
 }
+
 
 .cripto-card:hover {
-    box-shadow: 5px 5px;
-    transition: box-shadow 0.5s;
+    animation: pulso 5s ease-in-out infinite;
+    border: 2px solid;
+
+
+    .cripto-title {
+        background-position: right center;
+    }
+
+    .transicion {
+        transition: background-image 1s linear;
+    }
+
+    .cripto-title>span {
+        color: white;
+        text-shadow: -1px -1px 0 #000,
+            /* Sombra superior izquierda */
+            1px -1px 0 #000,
+            /* Sombra superior derecha */
+            -1px 1px 0 #000,
+            /* Sombra inferior izquierda */
+            1px 1px 0 #000;
+        /* Sombra inferior derecha */
+
+    }
 }
 
-.cripto-card>h3 {
+.cripto-title {
+    display: flex;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1) 30%, rgb(30, 247, 1) 60%, rgba(0, 0, 0, 1) 100%);
+    background-size: 200% auto;
+    transition: 0.5s;
+}
+
+
+
+.cripto-total {
+    background-image: url('../../public/bgcripto.jpg');
+    background-size: cover;
+    height: 80px;
+    padding-top: 2px;
+}
+
+
+.cripto-title>h3 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 300px;
     margin: 0px;
+    color: white;
+    text-shadow: -1px -1px 0 #000,
+        /* Sombra superior izquierda */
+        1px -1px 0 #000,
+        /* Sombra superior derecha */
+        -1px 1px 0 #000,
+        /* Sombra inferior izquierda */
+        1px 1px 0 #000;
+    /* Sombra inferior derecha */
 }
 
-.cripto-card>h3>b {
+
+.cripto-title>h3>b {
     border-radius: 50%;
     background: black;
     color: white;
-    text-shadow: -1px -1px 0 #000,  /* Sombra superior izquierda */
-    1px -1px 0 #000,  /* Sombra superior derecha */
-   -1px  1px 0 #000,  /* Sombra inferior izquierda */
-    1px  1px 0 #000;   /* Sombra inferior derecha */
+    text-shadow: -1px -1px 0 #000,
+        /* Sombra superior izquierda */
+        1px -1px 0 #000,
+        /* Sombra superior derecha */
+        -1px 1px 0 #000,
+        /* Sombra inferior izquierda */
+        1px 1px 0 #000;
+    /* Sombra inferior derecha */
     font-size: 25px;
 }
 
-.cripto-card>h3>i {
+.cripto-title>h3>i {
     font-size: 16px;
 }
 
-.cripto-card>h3>span {
+.cripto-title>span {
     display: inline;
     float: right;
-    font-size: 16px;
+    font-size: 10px;
     padding: 10px;
+    width: 50px;
+}
+
+.cripto-title>h3,
+.cripto-title>span {
+    padding: 0px;
+    height: 30px;
 }
 
 .info-criptoCard>p {
-    margin: 0px 0px 1px 0px;
+    margin: 5px 5px;
     text-align: center;
+}
+
+.info-criptoCard {
+    margin-top: 10px;
 }
 
 .info-criptoCard>p::after {
@@ -51,31 +143,64 @@
     border: 1px solid black;
 }
 
-.est-critoCard{
+.est-critoCard {
     width: 100%;
     display: flex;
     flex-direction: row;
     margin: auto;
 }
 
-.est-critoCard>div{
+.est-critoCard>div {
     width: 30%;
     margin: auto;
     text-align: center;
 }
 
-.est-critoCard>div>h5, p{
+.est-critoCard>div>h5,
+p {
     margin: 0px;
 }
 
-.est-critoCard>div>div{
+.est-critoCard>div>div {
     height: 50px;
 }
 
-.c-green{
+.c-green {
     color: green;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
 }
 
-.c-red{
+.c-red {
     color: red;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+}
+
+.info-criptoCard>p {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-shadow: -1px -1px 0 #000,
+        /* Sombra superior izquierda */
+        1px -1px 0 #000,
+        /* Sombra superior derecha */
+        -1px 1px 0 #000,
+        /* Sombra inferior izquierda */
+        1px 1px 0 #000;
+    /* Sombra inferior derecha */
+
+}
+
+.est-critoCard>div>h5,
+.est-critoCard>div>p {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-shadow: -1px -1px 0 #000,
+        /* Sombra superior izquierda */
+        1px -1px 0 #000,
+        /* Sombra superior derecha */
+        -1px 1px 0 #000,
+        /* Sombra inferior izquierda */
+        1px 1px 0 #000;
+    /* Sombra inferior derecha */
 }

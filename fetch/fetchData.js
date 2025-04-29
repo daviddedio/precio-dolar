@@ -7,6 +7,8 @@ https://github.com/public-apis/public-apis#cryptocurrency
 https://mercados.ambito.com//dolar/informal/historico-general/01-01-2024/31-12-2024
 */
 
+import { datosPrueba } from "./datos"
+
 /**
  * Esta funcion devuelve un fetch de valores del dolar entre 2 fechas
  * @param {string} year agregar un year
@@ -22,7 +24,7 @@ export const consultaRango = async (year) => {
     return retorno
 }
 
-export const transformData = async(arr)=>{
+export const transformData = async (arr) => {
     var array = await arr
     var newArray = []
     newArray.push(array[0])
@@ -71,7 +73,7 @@ export const consultaRiesgoPais = async (year) => {
     const datos = await res.json()
 
     datos.forEach(element => {
-        if (new Date(element.fecha).getFullYear().toString()==year){
+        if (new Date(element.fecha).getFullYear().toString() == year) {
             array.push([element.fecha, element.valor])
         }
     });
@@ -80,21 +82,21 @@ export const consultaRiesgoPais = async (year) => {
     return array
 }
 
-export const getCriptoHistory = async (cripto, api)=>{
+export const getCriptoHistory = async (cripto, api) => {
+
     const res = await fetch(`https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=${cripto}&market=USD&apikey=${api}`)
+    //const res = await fetch('https://api.argentinadatos.com/v1/finanzas/indices/riesgo-pais')
     const datos = await res.json()
-    const processData = await prepareData(datos)
-    return processData
+    console.log(datos)
+    return prepareData(datos)
 }
 
-export const prepareData = async(arr)=>{
-    const res = await arr
-    console.log(res)
-    const meta = res['Meta Data']
-    const datos = res['Time Series (Digital Currency Daily)']
-
+export const prepareData =  (arr) => {
+    const meta = arr['Meta Data']
+    const datos = arr['Time Series (Digital Currency Daily)']
+    
     const chartArray = [['Date', 'open', 'high', 'low', 'close']]
-    for (const [date, values] of Object.entries(datos)){
+    for (const [date, values] of Object.entries(datos)) {
         chartArray.push([
             date,
             parseFloat(values['1. open']),
@@ -106,16 +108,16 @@ export const prepareData = async(arr)=>{
     return chartArray
 }
 
-export const getNews = async()=>{
+export const getNews = async () => {
     const res = await fetch("https://finnhub.io/api/v1/news?category=general&token=cvu6v4hr01qjg137ufk0cvu6v4hr01qjg137ufkg")
     const data = await res.json()
     return data
 }
 
-export const getStock = async()=>{
+export const getStock = async () => {
     const res = await fetch("https://api.twelvedata.com/stocks")
     const data = await res.json()
     //console.log(data['data'])
-    const filtro = data['data'].filter(item => item.country =='Argentina')
+    const filtro = data['data'].filter(item => item.country == 'Argentina')
     return filtro
 }
