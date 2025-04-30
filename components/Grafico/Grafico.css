@@ -2,3 +2,11 @@
 display: grid;
 place-items: center;
 }
+
+.g-grafico-conteiner>div{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

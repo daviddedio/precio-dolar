@@ -7,7 +7,7 @@ export const Grafico = ({data, option}) => {
             <Chart
                 chartType="AreaChart"
                 width="90%"
-                height="450px"
+                height="350px"
                 data={data}
                 options={option}
                 legendToggle

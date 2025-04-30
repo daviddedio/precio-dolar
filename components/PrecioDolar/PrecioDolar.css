@@ -1,37 +1,38 @@
-.chart-dolar{
+.chart-dolar {
     position: relative;
     height: 500px;
     width: 100%;
 }
 
-.principal-conteiner-riesgo{
+.principal-conteiner-riesgo {
     background: black;
     color: white;
     padding-top: 25px;
 }
 
-.principal-conteiner-riesgo>p{
+.principal-conteiner-riesgo>p {
     text-align: center;
 }
 
-h2{
+h2 {
     text-align: center;
 }
 
-.visible{
+.visible {
     display: block;
 }
 
-.invisible{
+.invisible {
     display: none;
 }
 
-.dolarListado{
+.dolarListado {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.dolarListado>li{
+
+.dolarListado>li {
     list-style: none;
     text-decoration: none;
     padding: 10px;
@@ -40,18 +41,41 @@ h2{
     border: 1px solid white;
 }
 
-.contenedorDeDolares{
-    height: 650px;
+.contenedorDeDolares {
+    height: 450px;
+    overflow-y: scroll;
 }
 
-.yes    {
+.yes {
     background: green;
 }
 
-.dolares-argentina>h2{
+.dolares-argentina>h2 {
     color: white;
 }
 
-.dolares-region>h2{
+.dolares-region>h2 {
     color: white;
 }
+
+
+
+/* Extra small devices (phones, 600px and down) 
+@media only screen and (max-width: 600px) {...}
+
+Small devices (portrait tablets and large phones, 600px and up)
+@media only screen and (min-width: 600px) {...}*/
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 800px) {
+    .contenedorDeDolares {
+        height: 500px;
+        overflow-y: scroll;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) 
+@media only screen and (min-width: 992px) {...}
+
+Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (min-width: 1200px) {...}*/
